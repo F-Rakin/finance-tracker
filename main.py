@@ -1,4 +1,4 @@
-# Expenses (Float numbers)
+# Rakin_finance-tracker
 
 def expenses():
     """
@@ -14,8 +14,7 @@ def expenses():
 
     total_expenses = rent + groceries + transportation + entertainment   # Adds up all the expenses
     return total_expenses
-
-# Results 
+ 
 
 def results(monthly_allowance, total_expenses):
     """
@@ -31,12 +30,11 @@ def results(monthly_allowance, total_expenses):
 
     return balance
 
-# Conditional statements depending on spendings
 
 def conditions(balance):
     """
     Gives a conditional statement based on spendings
-    
+
     :return: A text message
     """
     if balance > 0:
@@ -44,10 +42,12 @@ def conditions(balance):
     else: 
         print("You have spent too much!!! Plan your spendings ") # Will show this message if you overspend
 
+
 def main():
     monthly_allowance = float(input("What is your monthly allowance? : $"))
     calculate_expenses = expenses()
     show_remaining_balance = results(monthly_allowance, calculate_expenses)
     conditions(show_remaining_balance)
+
 
 main()
