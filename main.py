@@ -36,16 +36,14 @@ def results(monthly_allowance, total_expenses):
     return balance
 
 
-def conditions(balance, monthly_allowance):
+def conditions(balance):
     """
     Gives a conditional statement based on spendings
 
     :return: A text message
     """
-    if balance >= 0.1 * monthly_allowance:
+    if balance > 0:
         print("Congrats! You have more money to spend.")  # Will show this message if you underspend
-    elif balance < 0.1 *monthly_allowance:
-        print("You have spend just the right amount! ")
     else: 
         print("You have spent too much!!! Plan your spendings ") # Will show this message if you overspend
 
