@@ -6,12 +6,17 @@ def expenses():
 
     :return: Stores Sum(expenses)
     """
+    while True:
+        try:
+            rent = float(input("How much do you pay monthly for rent? : $"))
+            groceries = float(input("How much do you spend on groceries per month : $"))
+            transportation = float(input("How much do you spend on transportation per month : $"))
+            entertainment = float(input("How much do you spend on entertainment per month : $"))
+            break
 
-    rent = float(input("How much do you pay monthly for rent? : $"))
-    groceries = float(input("How much do you spend on groceries per month : $"))
-    transportation = float(input("How much do you spend on transportation per month : $"))
-    entertainment = float(input("How much do you spend on entertainment per month : $"))
-
+        except: ValueError
+        print("Please enter a proper number")
+        
     total_expenses = rent + groceries + transportation + entertainment   # Adds up all the expenses
     return total_expenses
  
@@ -31,14 +36,16 @@ def results(monthly_allowance, total_expenses):
     return balance
 
 
-def conditions(balance):
+def conditions(balance, monthly_allowance):
     """
     Gives a conditional statement based on spendings
 
     :return: A text message
     """
-    if balance > 0:
+    if balance >= 0.1 * monthly_allowance:
         print("Congrats! You have more money to spend.")  # Will show this message if you underspend
+    elif balance < 0.1 *monthly_allowance:
+        print("You have spend just the right amount! ")
     else: 
         print("You have spent too much!!! Plan your spendings ") # Will show this message if you overspend
 
